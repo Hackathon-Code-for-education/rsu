@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
             password: document.getElementById('password').value,
             passwordConfirm: document.getElementById('passwordConfirm').value
         };
-
         // Отправить запрос на сервер для регистрации пользователя
         // (Пример запроса с использованием Fetch API)
         fetch('/register', {

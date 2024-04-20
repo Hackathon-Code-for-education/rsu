@@ -34,10 +34,8 @@
         <p>&copy; 2024 Университи+</p>
     </footer>
 
-    <script src="script.js"></script>
-</body>
-</html>
-<?php
+    <script src="register_script.php"></script>
+	<?php
 
 require_once('config.php');
 
@@ -68,3 +66,5 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
 }
 
 ?>
+</body>
+</html>
