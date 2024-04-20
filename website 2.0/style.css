@@ -1,0 +1,312 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    float: left;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.hero {
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.hero__content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero__heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero__paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero__button {
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.popular-universities {
+    padding: 20px;
+}
+
+.popular-universities__heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.universities-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.university {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.university__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.university__title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.university__location {
+    font-size: 14px;
+    color: #999;
+}
+
+.about-us {
+    padding: 20px;
+}
+
+.about-us__heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.about-us__paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.about-us__button {
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.search {
+    padding: 20px;
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.search-form__group {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.search-form__label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.search-form__input,
+.search-form__select {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-form__button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.university {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.university a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+.university__image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.university__title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.university__location {
+    font-size: 14px;
+    color: #999;
+}
+.register {
+    padding: 20px;
+}
+
+.register-form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.register-form__group {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.register-form__label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.register-form__input {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.register-form__button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.login {
+    padding: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.login-form__group {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.login-form__label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-form__input {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form__button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.shop {
+    padding: 20px;
+}
+
+.shop__products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.shop__product {
+    width: 250px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.shop__product__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.shop__product__title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.shop__product__price {
+    font-weight: bold;
+}
+
+.shop__product__button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
