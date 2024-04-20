@@ -1,9 +1,9 @@
 <?php
 
 $dbHost = 'localhost';
-$dbName = 'your_database_name';
-$dbUsername = 'your_username';
-$dbPassword = 'your_password';
+$dbName = 'user';
+$dbUsername = 'root';
+$dbPassword = '';
 
 // Создать соединение с базой данных
 $db = new mysqli($dbHost, $dbName, $dbUsername, $dbPassword);
