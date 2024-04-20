@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         document.body.appendChild(modal);
-
         const modalCloseButton = document.querySelector('.modal__close');
         modalCloseButton.addEventListener('click', function() {
             modal.remove();

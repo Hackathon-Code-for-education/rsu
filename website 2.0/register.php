@@ -1,56 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Университи+</h1>
+        <nav>
+            </nav>
+    </header>
+
+    <main>
+        <section class="register">
+            <h2>Регистрация</h2>
+            <form action="register.php" method="post">
+                <div class="register-form__group">
+                    <label for="login">Логин:</label>
+                    <input type="text" id="login" name="login" placeholder="Введите логин" required>
+                </div>
+                <div class="register-form__group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" placeholder="Введите пароль" required>
+                </div>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Университи+</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
 <?php
 
-// Подключить к базе данных
-require('db_connect.php');
+require_once('config.php');
 
-// Получить данные из формы
-$name = $_POST['name'];
-$email = $_POST['email'];
-$password = $_POST['password'];
-$passwordConfirm = $_POST['passwordConfirm'];
+// Обработка данных формы
+if (isset($_POST['login']) && isset($_POST['password'])) {
+    $login = trim($_POST['login']);
+    $password = trim($_POST['password']);
 
-// Проверка валидности данных
-if (empty($name) || empty($email) || empty($password) || empty($passwordConfirm)) {
-    $error = 'Все поля обязательны к заполнению.';
-} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $error = 'Неверный формат email.';
-} elseif (strlen($password) < 8) {
-    $error = 'Пароль должен быть не менее 8 символов.';
-} elseif ($password !== $passwordConfirm) {
-    $error = 'Пароли не совпадают.';
-} else {
-    // Проверка уникальности email
-    $sql = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
-    $result = $db->query($sql);
+    // Проверка на пустые поля
+    if (empty($login) || empty($password)) {
+        echo "Заполните все поля!";
+        exit;
+    }
 
-    if ($result->num_rows > 0) {
-        $error = 'Пользователь с таким email уже существует.';
+    // Хеширование пароля
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // Запрос на добавление пользователя в базу данных
+    $sql = "INSERT INTO users (login, password) VALUES ('$login', '$hashedPassword')";
+
+    if ($db->query($sql) === TRUE) {
+        echo "Регистрация успешна!";
+        header('Location: login.php'); // Перенаправление на страницу входа
+        exit;
     } else {
-        // Хеширование пароля
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        // Регистрация пользователя
-        $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashedPassword')";
-        $db->query($sql);
-
-        if ($db->affected_rows > 0) {
-            // Регистрация успешна
-            session_start();
-            $_SESSION['user_id'] = $db->insert_id;
-            $_SESSION['email'] = $email;
-            $_SESSION['name'] = $name;
-
-            header('Location: /'); // Перенаправить на главную страницу
-            exit;
-        } else {
-            $error = 'Ошибка регистрации.';
-        }
+        echo "Ошибка регистрации: " . $db->error;
     }
 }
 
-// Отобразить ошибку (если есть)
-if (isset($error)) {
-    echo json_encode(['error' => $error]);
-} else {
-    echo json_encode(['success' => true]);
-}
+?>
